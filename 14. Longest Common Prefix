@@ -1,0 +1,12 @@
+class Solution_4():
+  def longestCommonPrefix(self, strs):
+    self.strs = strs
+    prefix = self.strs[0]
+    for strs_1 in self.strs[1:]: #self.strs[0]拿去當基準，所以從self.strs[1]開始比
+      while not string.startswith(prefix): #比對strs_1是否是prefix開頭
+        prefix = prefix[:-1] #如果strs_1不是prefix開頭，就把flower變成flowe再比一次，再不是就在減一位
+        if not prefix: #如果是(空字符串 ""、空列表 []、数字 0、None)，if not prefix會成立，然後回傳''
+          return ''
+    return prefix
+tim_4 = Solution_4()
+tim_4.longestCommonPrefix(["flower","flow","flight"])
