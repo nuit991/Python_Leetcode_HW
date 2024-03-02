@@ -1,0 +1,14 @@
+class Solution_3():
+  def romanToInt(self, s):
+    self.s = s
+    result = 0
+    map = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000} 
+    for num_1 in range(len(self.s)-1):
+      if map[self.s[num_1]] < map[self.s[num_1 + 1]]:
+        result = result - map[self.s[num_1]]
+      else:
+        result = result + map[self.s[num_1]]
+    result = result + map[self.s[-1]]
+    print(result)
+tim_3 = Solution_3()
+tim_3.romanToInt("MCMXCIV")
