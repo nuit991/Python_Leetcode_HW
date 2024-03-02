@@ -1,25 +1,11 @@
-class Solution():
-  def __init__(self):
-    self.num_list1 = []
-    self.mum_list2 = []
-
-  def twoSum_1(self):
-    num_3 = int(input('數量: '))
-    for num_4 in range (0, num_3):
-      self.num_2 = int(input('請輸入數字: '))
-      self.num_list1.append(self.num_2)
-    print(self.num_list1)
-
-  def twoSum_2(self):
-    
-    for num_5 in range (len(self.num_list1)):
-      for num_6 in range (num_5, len(self.num_list1)):
-        if self.num_list1[num_5] + self.num_list1[num_6] == 9:
-          self.mum_list2.append(self.num_list1.index(self.num_list1[num_5]))
-          self.mum_list2.append(self.num_list1.index(self.num_list1[num_6]))
-          
-    print(self.mum_list2)
-          
-tim = Solution()
-tim.twoSum_1()
-tim.twoSum_2()
+class Solution_1():
+  def twoSums(self, nums, target = 6):
+    self.nums = nums
+    self.target = target
+    for nums_1 in range (0, len(self.nums)):
+      for nums_2 in range (nums_1 + 1, len(nums)):
+        if self.nums[nums_1] + self.nums[nums_2] == 6:
+          #print(nums_1, nums_2)
+          return [nums_1, nums_2]
+tim_1 = Solution_1()
+tim_1.twoSums([3, 2, 3])
