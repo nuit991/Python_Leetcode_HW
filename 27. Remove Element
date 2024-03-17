@@ -1,0 +1,30 @@
+#我的
+nums = [3,2,2,3]
+val = 3
+len1 = len(nums) - 1
+
+for nums1 in range (0, len1):
+  if nums[nums1] == val:
+    nums.pop(nums1)
+print(nums)
+print(len(nums))
+
+
+
+
+
+#別人的
+class Solution9():
+  def removeElement(self, nums, val):
+    self.nums = nums
+    self.val = val
+    i = 0
+    len1 = len(nums) - 1
+    for nums1 in range (0, len1):
+      if nums[nums1] != val:
+        i += 1
+    return i
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+tim_8 = Solution9()
+tim_8.removeElement(nums, val)
