@@ -1,0 +1,10 @@
+class Solution12():
+  def lengthOfLastWord(self, s):
+    self.s = s
+    d = self.s.split(' ')
+    c = self.s.rstrip()
+    g = c.split(' ')
+    return len(g[len(g) - 1])
+s = "luffy is still joyboy"
+tim_11 = Solution12()
+tim_11.lengthOfLastWord(s)
