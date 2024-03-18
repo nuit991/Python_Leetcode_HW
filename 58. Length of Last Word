@@ -8,3 +8,17 @@ class Solution12():
 s = "luffy is still joyboy"
 tim_11 = Solution12()
 tim_11.lengthOfLastWord(s)
+
+
+
+s = "   fly me   to   the moon  "
+d = s.split(' ')
+print(d)
+d[-3]
+i = -1
+while True:
+  if d[i] == '':
+    i -= 1
+  else:
+    print(len(d[i]))
+    break
