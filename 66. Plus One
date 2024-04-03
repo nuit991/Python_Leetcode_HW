@@ -8,7 +8,7 @@ class Solution():
     list_1 = []
     len_1 = len(d_4)
     for i in range (0, len_1):
-      list_1.append(d_4[i])
+      list_1.append(int(d_4[i]))
     print(list_1)
 
     return list_1
