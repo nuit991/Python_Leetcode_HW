@@ -1,0 +1,18 @@
+class Solution():
+  def plusOne(self, digits):
+    self.digits = digits
+    d_2 = ''.join(map(str, self.digits))
+    d_3 = int(d_2) + 1
+    d_4 = str(d_3)
+
+    list_1 = []
+    len_1 = len(d_4)
+    for i in range (0, len_1):
+      list_1.append(d_4[i])
+    print(list_1)
+
+    return list_1
+
+d_1 = [9,9,9]
+result = Solution()
+result.plusOne(d_1)
