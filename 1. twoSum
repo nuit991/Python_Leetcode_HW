@@ -1,11 +1,9 @@
-class Solution_1():
-  def twoSums(self, nums, target = 6):
+class Solution():
+  def twoSum(self, nums, target):
     self.nums = nums
     self.target = target
     for nums_1 in range (0, len(self.nums)):
       for nums_2 in range (nums_1 + 1, len(nums)):
-        if self.nums[nums_1] + self.nums[nums_2] == 6:
+        if self.nums[nums_1] + self.nums[nums_2] == target:
           #print(nums_1, nums_2)
           return [nums_1, nums_2]
-tim_1 = Solution_1()
-tim_1.twoSums([3, 2, 3])
