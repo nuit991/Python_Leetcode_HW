@@ -1,26 +1,17 @@
-class Solution10():
+class Solution():
   def strStr(self, haystack, needle):
-    self.haystack = haystack
-    self.needle = needle
-    hay_len = len(haystack)
-    nee_len = len(needle)
-
-    nums1 = 0
-    nums2 = 0
+    hay_1 = len(haystack)
+    nee_1 = len(needle)
     i = 0
+    y = nee_1
 
-    while i <= nee_len - 1:
-      if needle[nums1] == haystack[nums2]:
-        nums1 += 1
-        nums2 += 1
+
+    while y <= hay_1:
+      if needle[:nee_1] != haystack[i:y]:
         i += 1
+        y += 1
       else:
+        return i
         break
-    if i == nee_len:
-      print(0)
-    else:
-      print(-1)
-haystack = "leetcode"
-needle = "leeto"
-tim_9 = Solution10()
-tim_9.strStr(haystack, needle)
+    if y > hay_1:
+      return -1
