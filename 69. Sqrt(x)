@@ -1,0 +1,17 @@
+class Solution(object):
+  def mySqrt(self, x):
+    i = 0
+    r = x
+
+
+    while i <= r:
+      mid_1 = (i + r) // 2
+      if mid_1 * mid_1 > x:
+        r = mid_1 - 1
+      elif mid_1 * mid_1 < x:
+        i = mid_1 + 1
+      else:
+        return mid_1
+    return r
+
+##不熟
