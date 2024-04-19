@@ -1,0 +1,8 @@
+class Solution():
+  def maxDepth(self, root):
+    if not root :
+      return 0
+    de_l = self.maxDepth(root.left)
+    de_r = self.maxDepth(root.right)
+
+    return 1 + max(de_l, de_r) 
