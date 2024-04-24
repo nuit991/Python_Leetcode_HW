@@ -1,0 +1,10 @@
+class Solution():
+    def maxProfit(self, prices):
+        min_1 = float('inf')
+        max_1 = 0
+        for p_1 in prices:
+            if p_1 < min_1:
+                min_1 = p_1
+            else:
+                max_1 = max(max_1, p_1 - min_1)
+        return max_1
