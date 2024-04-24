@@ -1,0 +1,14 @@
+class Solution():
+    def minDepth(self, root):
+        if root == None:
+            return 0
+        if not root.left and not root.right:
+            return 1
+        
+
+        de_l = self.minDepth(root.left)
+        de_r = self.minDepth(root.right)
+
+        if not root.left or not root.right:
+            return de_l + de_r + 1
+        return min(de_l, de_r) + 1
