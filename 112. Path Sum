@@ -1,0 +1,11 @@
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        if not root:
+            return False
+        
+        if not root.left and not root.right:
+            return root.val == targetSum
+        
+        le_p = self.hasPathSum(root.left, targetSum - root.val)
+        re_p = self.hasPathSum(root.right, targetSum - root.val)
+        return le_p or re_p
