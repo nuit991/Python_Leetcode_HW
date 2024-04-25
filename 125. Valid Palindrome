@@ -1,0 +1,21 @@
+class Solution():
+    def isPalindrome(self, s):
+        l_1 = 0
+        r_1 = len(s) - 1
+
+        if s == None:
+            return True
+
+        while l_1 < abs(r_1):
+
+            while s[l_1].isalnum() == False and l_1 < abs(r_1):
+                l_1 += 1
+            while s[r_1].isalnum() == False and l_1 < abs(r_1):
+                r_1 -= 1
+            if s[l_1].lower() == s[r_1].lower():
+                l_1 += 1
+                r_1 -= 1
+            else:
+                return False
+
+        return True
