@@ -1,0 +1,8 @@
+class Solution():
+    def convertToTitle(self, columnNumber):
+        result = ''
+        while columnNumber :
+            r_1 = (columnNumber - 1) % 26
+            result = chr(ord('A') + r_1) + result
+            columnNumber = (columnNumber - 1) // 26
+        return result
