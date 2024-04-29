@@ -1,0 +1,17 @@
+class Solution(object):
+    def isHappy(self, n):
+        def nextNumber(n):
+            total = 0
+            while n > 0:
+                
+                n_1  = n % 10
+                total = (n_1 ** 2) + total
+                n //= 10
+            return total
+    
+        slow = n
+        fast = nextNumber(n)
+        while fast != 1 and slow != fast:
+            slow = nextNumber(slow)
+            fast = nextNumber(nextNumber(fast))
+        return fast == 1
