@@ -1,0 +1,8 @@
+class Solution:
+    def containsNearbyDuplicate(self, nums, k):
+        char_index = {}
+        for i, char in enumerate(nums):
+            if char in char_index and i - char_index[char] <= k:
+                return True
+            char_index[char] = i
+        return False
