@@ -1,0 +1,8 @@
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        if n <= 0:
+            return False
+    # 如果 n 是 2 的幂，则其二进制表示中只有一个 1，其他位都是 0
+    # 例如，2^3 = 8，其二进制表示为 1000，只有一个 1
+    # 因此，利用位运算的特性可以判断一个数是否是 2 的幂
+        return (n & (n - 1)) == 0
