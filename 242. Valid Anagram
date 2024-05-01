@@ -1,0 +1,20 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        if len(s) != len(t):
+            return False
+
+        cunt = {}
+        for x_1 in s:
+            if x_1 in cunt:
+                cunt[x_1] += 1
+            else:
+                cunt[x_1] = 1
+
+        for x_2 in t:
+            if x_2 in cunt:
+                cunt[x_2] -= 1
+                if cunt[x_2] < 0 :
+                    return False
+            else:
+                return False
+        return True
