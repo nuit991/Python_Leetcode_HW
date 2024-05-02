@@ -1,0 +1,11 @@
+class Solution():
+    def addDigits(self, num):
+        
+        res = 0
+        n_1 = 0
+        n_2 = 0
+        while num >= 10:
+            n_1 = num % 10
+            n_2 = num // 10
+            num = n_1 + n_2
+        return num
