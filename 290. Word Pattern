@@ -1,0 +1,21 @@
+class Solution():
+    def wordPattern(self, pattern, s):
+        s_1 = s.split(' ')
+        if len(pattern) != len(s_1):
+            return False
+        
+        p_1 = {}
+        s_2 = {}
+        for p_2, s_3 in zip(pattern, s_1):
+            if p_2 in p_1:
+                if p_1[p_2] != s_3:
+                    return False
+            else:
+                p_1[p_2] = s_3
+
+            if s_3 in s_2:
+                if s_2[s_3] != p_2:
+                    return False
+            else:
+                s_2[s_3] = p_2
+        return True
