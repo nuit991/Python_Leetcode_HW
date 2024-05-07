@@ -1,0 +1,11 @@
+from collections import Counter
+
+class Solution:
+    def intersect(self, nums1, nums2):
+        cunt = Counter(nums1)
+        result = []
+        for x_1 in nums2:
+            if x_1 in cunt and cunt[x_1] > 0:
+                result.append(x_1)
+                cunt[x_1] -= 1
+        return result
