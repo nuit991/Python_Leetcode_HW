@@ -1,0 +1,11 @@
+class Solution:
+    def firstUniqChar(self, s):
+        chunt = {}
+
+        for x_1 in s:
+            chunt[x_1] = chunt.get(x_1, 0) + 1
+        
+        for x_2, char in enumerate(s):
+            if chunt[char] == 1:
+                return x_2
+        return -1 
