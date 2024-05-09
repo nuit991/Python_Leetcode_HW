@@ -1,0 +1,13 @@
+class Solution:
+    def findTheDifference(self, s, t):
+        cunt = {}
+        for x_1 in s:
+            cunt[x_1] = cunt.get(x_1, 0) + 1
+        
+        for x_2 in t:
+            if x_2 in cunt:
+                cunt[x_2] -= 1
+                if cunt[x_2] < 0:
+                    return x_2
+            else:
+                return x_2
