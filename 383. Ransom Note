@@ -1,0 +1,12 @@
+class Solution:
+    def canConstruct(self, ran, mag) -> bool:
+        cunt = Counter(mag)
+
+        for x_1 in ran:
+            if x_1 in cunt:
+                cunt[x_1] -= 1
+                if cunt[x_1] < 0:
+                    return False
+            elif x_1 not in cunt:
+                return False
+        return True
