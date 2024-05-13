@@ -1,0 +1,15 @@
+class Solution:
+    def readBinaryWatch(self, turnedOn):
+        def cuntBits(num):
+            cunt = 0
+            while num:
+                num &= (num - 1)
+                cunt += 1
+            return cunt
+
+        res = []
+        for x_1 in range (12):
+            for x_2 in range (60):
+                if cuntBits(x_1) + cuntBits(x_2) == turnedOn:
+                    res.append(f"{x_1}:{x_2:02d}")
+        return res
