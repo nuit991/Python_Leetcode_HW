@@ -1,0 +1,18 @@
+class Solution():
+    def sumOfLeftLeaves(self, root):
+        def isLeaf(node):
+            return node and not node.left and not node.right
+
+        
+        if not root:
+            return 0
+
+        sum_leaf = 0
+
+        if isLeaf(root.left):
+            sum_leaf += root.left.val
+        else:
+            sum_leaf += self.sumOfLeftLeaves(root.left)
+        sum_leaf += self.sumOfLeftLeaves(root.right)
+
+        return sum_leaf
