@@ -1,0 +1,7 @@
+class Solution:
+    def countSegments(self, s: str) -> int:
+        cunt = 0
+        for num in range (len(s)):
+            if (num == 0 or s[num - 1] == ' ') and s[num] != ' ':
+                cunt += 1
+        return cunt 
