@@ -1,0 +1,13 @@
+class Solution:
+    def arrangeCoins(self, n):
+        if n == 1:
+            return 1
+
+        num_1 = 1
+        cunt = 0
+        
+        while n >= num_1:
+            n = n - num_1
+            num_1 += 1
+            cunt += 1
+        return cunt
