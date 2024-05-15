@@ -1,0 +1,15 @@
+class Solution:
+    def thirdMax(self, nums):
+        f_m = s_m = t_m = float('-inf')
+
+        for num in nums:
+            if num > f_m:
+                t_m = s_m
+                s_m = f_m
+                f_m = num
+            elif num < f_m and num > s_m:
+                t_m = s_m
+                s_m = num
+            elif num < s_m and num > t_m:
+                t_m = num
+        return t_m if t_m != float('-inf') else f_m
