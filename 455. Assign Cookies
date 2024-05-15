@@ -1,0 +1,15 @@
+class Solution:
+    def findContentChildren(self, g, s):
+        g.sort()
+        s.sort()
+
+        z_1 = 0
+        z_2 = 0
+
+        while z_1 <= len(s) - 1 and z_2 <= len(g) - 1:
+            if s[z_1] >= g[z_2]:
+                z_1 += 1
+                z_2 += 1
+            else:
+                z_1 += 1
+        return z_2
