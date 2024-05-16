@@ -1,0 +1,9 @@
+class Solution:
+    def hammingDistance(self, x, y):
+        ham_1 = x ^ y
+        res_ham = 0
+
+        while ham_1:
+            res_ham += ham_1 & 1
+            ham_1 >>= 1
+        return res_ham
