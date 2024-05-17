@@ -1,0 +1,17 @@
+class Solution:
+    def findComplement(self, num):
+        bin_1 = bin(num)[2:]
+
+        res = []
+        for bin_2 in bin_1:
+            if bin_2 == 1:
+                res.append('0')
+            if bin_2 == 0:
+                res.append('1')
+        res_a = ''.join(res)
+
+        return int(res_a, 2)
+
+num = 5
+res = Solution()
+res.findComplement(num)
