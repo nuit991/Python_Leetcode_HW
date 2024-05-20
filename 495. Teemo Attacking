@@ -1,0 +1,34 @@
+class Solution:
+    def findPoisonedDuration(self, timeSeries, duration):
+        if not timeSeries:
+            return 0
+
+        res_tol = 0
+        for x_1 in range (1, len(timeSeries)):
+            res_tol += min(duration, timeSeries[x_1] - timeSeries[x_1 - 1]) 
+        return res_tol + duration
+
+
+'''
+for x_1 in range (1, len(timeSeries)):
+            res_tol += min(duration, timeSeries[i] - timeSeries[i - 1]) 
+
+前項比後項
+如果duration比較小就直接用duration，因為毒一次的攻擊時間就是2秒
+如果timeSeries[i] - timeSeries[i - 1]比較小就直接用timeSeries[i] - timeSeries[i - 1]，但這樣只會+timeSeries[i] - timeSeries[i - 1]秒，因為後項跟前項只有間隔timeSeries[i] - timeSeries[i - 1]秒
+
+
+return res_tol + duration
+最後一次攻擊不會管甚麼條件，直接加上去，因為後面沒有其他限制
+
+x->攻擊間隔
+1 2
+    3x
+      4 5
+        5 6 
+          6 7 
+              8x
+                9 10
+
+
+'''
