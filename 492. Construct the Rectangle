@@ -1,0 +1,8 @@
+class Solution:
+    def constructRectangle(self, area):
+        w_1 = int(math.sqrt(area))
+
+        while area % w_1 != 0:
+            w_1 -= 1
+        le_1 = area // w_1
+        return [le_1, w_1]
