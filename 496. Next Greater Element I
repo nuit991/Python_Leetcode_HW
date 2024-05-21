@@ -1,0 +1,13 @@
+class Solution:
+    def nextGreaterElement(self, nums1, nums2):
+        stack_1 = []
+        dit_1 = {}
+
+        for x_1 in nums2:
+            while stack_1 and stack_1[-1] < x_1:
+                dit_1[stack_1.pop()] = x_1
+            stack_1.append(x_1)
+        res = []
+        for x_2 in nums1:
+            res.append(dit_1.get(x_2, -1))
+        return res
